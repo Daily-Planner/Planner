@@ -5,33 +5,36 @@ export default class login_register extends Component {
     super(props);
     this.state = {
       value: '',
-      value2: ''
+      value2: '',
+      click: false 
     };
-    this.handleChange= this.handleChange.bind(this);
-    this.handleChange2= this.handleChange2.bind(this);
-    // this.handleSubmitL = this.handleSubmitL.bind(this);
-    // this.handleSubmitS = this.handleSubmitS.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+ 
+  //handles the value of the input text from  username and name 
   handleChange(event) {
 
     this.setState({value: event.target.value});
 
   }
-  handleChange2(event) {
+  //handles the value of the password inputs
+  handleChange(event) {
 
     this.setState({value2: event.target.value2});
 
   }
 
-  handleSubmitL(event) {
+  //once submit is hit the alert will pop up from the Login
+  handleSubmit(event) {
 
     alert('Logging In ' + this.state.value);
     event.preventDefault();
 
   }
 
-  handleSubmitS(event) {
+  //once the submit button is hit from the signUp the alert goes off
+  handleSubmit(event) {
 
     alert('Thank you for signing Up ' + this.state.value);
     event.preventDefault();
@@ -39,53 +42,50 @@ export default class login_register extends Component {
   }
 
   login() {
-    <form onSubmit = {this.handleSubmitL}>
-      <label>
-          UserName:
-            <input type="text" value = {this.state.value} onChange={this.handleChange}/>
-      </label>
-            <input type="submit" value="Submit"/>
-      <label>
-          Password:
-            <input type = 'text' value = {this.state.value2} onChange={this.handleChange2}/>
-      </label>
-            <input type = 'submit' value2= "Submit"/>
-    </form>
-    
+    alert (
+    'Welcome Back ' + this.state.value )
     }
 
   signUp() {
-    <form onSubmit = {this.handleSubmitS}>
+    alert (
+      'Thank you ' + this.state.value + ' for signing up')
+      }
     
-    <label>
-        Name:
-        <input type= 'text' value = {this.state.value}  onChange= {this.handleChange}/>
-    </label>
-        <input type= 'submit' value = "Submit"/>
-    <label>
-        Password:
-        <input type = 'text' value = {this.state.value2} onchange= {this.handleChange} />
-    </label>
-        <input type = 'submit' value= 'Submit'/>
-    </form>
-
-
-  }
-
-  
   
   render() {
 
+    // if i click the login button the login form pops up
+    //else
+    //the signup button pops up then the signup form pops up
+    // after the form is filled then we move to another componet 
+
+    <div id = 'loginBox'>
+        
+      <button id= 'login' onClick = {this.login} > Login </button>
+
+      <button id= 'signUp' onClick= {this.signUp}> Sign up </button>
+
+    </div>
+    
 
     return (
-      <div id = 'loginBox'>
-          
-        <button id= 'login' onClick = {this.login}> Login </button>
-
-        <button id= 'signUp' onClick= {this.signUp}> Sign up </button>
-
-      </div>
-
+      <div id= 'form container'>
+        <form onSubmit = {this.handleSubmit}>
+        <label>
+          Name:
+          <input type= 'text' value = {this.state.value}  onChange= {this.handleChange}/>
+        </label>
+          <input type= 'submit' value = "Submit"/>
+         <label>
+          Password:
+          <input type = 'text' value = {this.state.value2} onChange= {this.handleChange} />
+        </label>
+          <input type = 'submit' value= 'Submit'/>
+      </form>
+    </div>
+      
+  
+  
 
     );
   }
