@@ -6,9 +6,11 @@ export default class login_register extends Component {
     this.state = {
       value: '',
       value2: '',
-      click: false 
+      onLoad: false 
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleChange2 = this.handleChange2.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
  
@@ -19,9 +21,9 @@ export default class login_register extends Component {
 
   }
   //handles the value of the password inputs
-  handleChange(event) {
+  handleChange2(event) {
 
-    this.setState({value2: event.target.value2});
+    this.setState({value2: event.target.value});
 
   }
 
@@ -59,13 +61,21 @@ export default class login_register extends Component {
     //the signup button pops up then the signup form pops up
     // after the form is filled then we move to another componet 
 
-    <div id = 'loginBox'>
+    if( this.state.onLoad === true) {
+      return( 
+
+        <div id = 'loginBox'>
         
-      <button id= 'login' onClick = {this.login} > Login </button>
+        <button id= 'login' onClick = {this.login} > Login </button>
+        
+        <button id= 'signUp' onClick= {this.signUp}> Sign up </button>
+        
+        </div>
+        )
+    } else { 
 
-      <button id= 'signUp' onClick= {this.signUp}> Sign up </button>
-
-    </div>
+      return( <div> </div>)
+    }
     
 
     return (
@@ -78,7 +88,7 @@ export default class login_register extends Component {
           <input type= 'submit' value = "Submit"/>
          <label>
           Password:
-          <input type = 'text' value = {this.state.value2} onChange= {this.handleChange} />
+          <input type = 'text' value = {this.state.value2} onChange= {this.handleChange2} />
         </label>
           <input type = 'submit' value= 'Submit'/>
       </form>
