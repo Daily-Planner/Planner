@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import App from App.js 
+
 
 export default class Planner extends Component {
   constructor(props) {
