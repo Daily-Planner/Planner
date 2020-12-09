@@ -7,6 +7,7 @@ const app = express();
 
 gongoose.connect('mongodb+srv://sickdata:sick@sick1.mfjtw.mongodb.net/<dbname>?retryWrites=true&w=majority',  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 
+
 app.use(express.urlencoded({extended:true}));
 
 app.use(express.json());
