@@ -16,7 +16,7 @@ export default class TextBox extends Component {
         
         <div id={"add"} className={"addIng"}>
         <textarea id={"ingText"} cols="30" rows="10" value={this.state.summary}>
-            Please write in here
+            Please write in here!!
         </textarea>
     </div>
 }
