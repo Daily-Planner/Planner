@@ -1,0 +1,14 @@
+body{
+
+    background-color: blue;
+}
+
+#loginBox{
+align-items: center;
+width: 30%;
+border: 15px solid green;
+padding: 50px;
+  margin: 20px;
+  background-color: cornsilk;
+}
+

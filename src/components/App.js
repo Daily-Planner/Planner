@@ -55,7 +55,6 @@ export default class login_register extends Component {
           Name:
           <input type= 'text' value = {this.state.value}  onChange= {this.handleChange}/>
         </label>
-          <input type= 'submit' value = "Submit"/>
          <label>
           Password:
           <input type = 'text' value = {this.state.value2} onChange= {this.handleChange2} />
@@ -80,7 +79,6 @@ export default class login_register extends Component {
           Name:
           <input type= 'text' value = {this.state.value}  onChange= {this.handleChange}/>
         </label>
-          <input type= 'submit' value = "Submit"/>
          <label>
           Password:
           <input type = 'text' value = {this.state.value2} onChange= {this.handleChange2} />
