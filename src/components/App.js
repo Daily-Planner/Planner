@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Textbox from "./Textbox"
+
 
 export default class login_register extends Component {
   constructor(props) {
@@ -33,6 +35,7 @@ export default class login_register extends Component {
   handleSubmitL(event) {
 
     alert('Welcome back ' + this.state.value);
+    this.setState({onClick:"text"});
     event.preventDefault();
 
   }
@@ -114,6 +117,8 @@ export default class login_register extends Component {
        return this.signUp();
     } else if (this.state.onClick === 'login') {
       return this.login();
+    } else if (this.state.onClick === 'text') {
+      return <Textbox />;
     } else {
       return (
         <div>its not working
